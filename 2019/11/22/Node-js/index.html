@@ -46,28 +46,34 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="代代码头">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="1 Node.js介绍 1.1 Node.js是什么 Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node.js不是一门语言 不是库，不是框架 是一个JavaScript运行时环境 可以解析和执行JavaScript代码   浏览器中的JavaScript EcmaScript 基本语法 数据类型   BOM DOM   Node.js中的JavaSc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;22&#x2F;Node-js&#x2F;index.html">
 <meta property="og:site_name" content="代代码头">
+<meta property="og:description" content="1 Node.js介绍 1.1 Node.js是什么 Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 Node.js不是一门语言 不是库，不是框架 是一个JavaScript运行时环境 可以解析和执行JavaScript代码   浏览器中的JavaScript EcmaScript 基本语法 数据类型   BOM DOM   Node.js中的JavaSc">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;static001.infoq.cn&#x2F;resource&#x2F;image&#x2F;85&#x2F;65&#x2F;851bca4acc603ce08d1011243191f665.jpg">
+<meta property="og:image" content="c:%5CUsers%5CJedision%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1558317772288.png">
+<meta property="og:updated_time" content="2019-11-22T07:32:35.148Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;static001.infoq.cn&#x2F;resource&#x2F;image&#x2F;85&#x2F;65&#x2F;851bca4acc603ce08d1011243191f665.jpg">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2019/11/22/Node-js/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>代代码头</title>
+  <title>Node.js | 代代码头</title>
   
 
 
@@ -162,10 +168,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/22/Node-js/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -179,8 +185,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/22/Node-js/" class="post-title-link" itemprop="url">Node.js</a>
+          Node.js
         </h1>
 
         <div class="post-meta">
@@ -205,7 +210,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>1 Node.js介绍</p>
+        <p>1 Node.js介绍</p>
 <h2 id="1-1-Node-js是什么"><a href="#1-1-Node-js是什么" class="headerlink" title="1.1 Node.js是什么"></a>1.1 Node.js是什么</h2><ul>
 <li>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。<ul>
 <li>Node.js不是一门语言</li>
@@ -759,418 +764,36 @@
 </ol>
 <h1 id="8-总结"><a href="#8-总结" class="headerlink" title="8 总结"></a>8 总结</h1><h2 id="8-1-ES6-数组find-、findIndex-原理"><a href="#8-1-ES6-数组find-、findIndex-原理" class="headerlink" title="8.1 ES6 数组find()、findIndex()原理"></a>8.1 ES6 数组find()、findIndex()原理</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @Author Jedision</span></span><br><span class="line"><span class="comment"> * @Description 定义返回数组指定条件的元素和下标</span></span><br><span class="line"><span class="comment"> * @Inputs  Function 条件函数</span></span><br><span class="line"><span class="comment"> * @Outputs Object &#123;元素和下标&#125;</span></span><br><span class="line"><span class="comment"> * @return</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.myFind = <span class="function"><span class="keyword">function</span> (<span class="params">conditionFun</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="keyword">this</span>.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(conditionFun(<span class="keyword">this</span>[i],i))&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                ele:<span class="keyword">this</span>[i],</span><br><span class="line">                index:i</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> users = [</span><br><span class="line">    &#123;<span class="attr">id</span>:<span class="number">1</span>, <span class="attr">name</span>:<span class="string">'Rose'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">id</span>:<span class="number">2</span>, <span class="attr">name</span>:<span class="string">'Jack'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">id</span>:<span class="number">3</span>, <span class="attr">name</span>:<span class="string">'Rrid'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">id</span>:<span class="number">4</span>, <span class="attr">name</span>:<span class="string">'Lili'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">id</span>:<span class="number">5</span>, <span class="attr">name</span>:<span class="string">'Pony'</span>&#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = users.myFind(<span class="function"><span class="keyword">function</span> (<span class="params">item, index</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> index == <span class="number">2</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">// &#123; ele: &#123; id: 3, name: 'Rrid' &#125;, index: 2 &#125;</span></span><br></pre></td></tr></table></figure>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/22/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jedision Shi">
-      <meta itemprop="description" content="">
-    </span>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/22/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/" rel="next" title="微信公众号开发">
+                  <i class="fa fa-chevron-left"></i> 微信公众号开发
+                </a>
+            </div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="代代码头">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/22/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">微信公众号开发</a>
-        </h1>
+            <span class="post-nav-divider"></span>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2019-11-22 15:24:00 / Modified: 15:24:56" itemprop="dateCreated datePublished" datetime="2019-11-22T15:24:00+08:00">2019-11-22</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="微信公众号开发"><a href="#微信公众号开发" class="headerlink" title="微信公众号开发"></a>微信公众号开发</h1><h1 id="1-接入指南"><a href="#1-接入指南" class="headerlink" title="1 接入指南"></a>1 接入指南</h1><p>接入微信公众平台开发，开发者需要按照如下步骤完成：</p>
-<p>1、填写服务器配置</p>
-<p>2、验证服务器地址的有效性</p>
-<p>3、依据接口文档实现业务逻辑</p>
-<h2 id="1-1-填写服务器配置"><a href="#1-1-填写服务器配置" class="headerlink" title="1.1 填写服务器配置"></a>1.1 填写服务器配置</h2><p>登录微信公众平台官网后，在公众平台官网的开发-基本设置页面，点击“修改配置”按钮，开始配置：</p>
-<ul>
-<li>填写服务器地址（URL）、Token和EncodingAESKey，<ul>
-<li>其中URL是开发者用来接收微信消息和事件的接口URL；</li>
-<li>Token可由开发者可以任意填写，用作生成签名（该Token会和接口URL中包含的Token进行比对，从而验证安全性）；</li>
-<li>EncodingAESKey由开发者手动填写或随机生成，将用作消息体加解密密钥。</li>
-</ul>
-</li>
-</ul>
-<h2 id="1-2-验证服务器地址的有效性"><a href="#1-2-验证服务器地址的有效性" class="headerlink" title="1.2 验证服务器地址的有效性"></a>1.2 验证服务器地址的有效性</h2><p> 开发者提交信息后，微信服务器将发送GET请求到填写的服务器地址URL上，GET请求携带参数如下表所示：</p>
-<table>
-<thead>
-<tr>
-<th align="left">参数</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">signature</td>
-<td align="left">微信加密签名，signature结合了开发者填写的token参数和请求中的timestamp参数、nonce参数。</td>
-</tr>
-<tr>
-<td align="left">timestamp</td>
-<td align="left">时间戳</td>
-</tr>
-<tr>
-<td align="left">nonce</td>
-<td align="left">随机数</td>
-</tr>
-<tr>
-<td align="left">echostr</td>
-<td align="left">随机字符串</td>
-</tr>
-</tbody></table>
-<p>开发者通过检验signature对请求进行校验。若确认此次GET请求来自微信服务器，请原样返回echostr参数内容，则接入生效，成为开发者成功，否则接入失败。<br>加密/校验流程如下：</p>
-<ol>
-<li>将token、timestamp、nonce三个参数进行字典序排序</li>
-<li>将三个参数字符串拼接成一个字符串进行sha1加密</li>
-<li>开发者获得加密后的字符串可与signature对比，标识该请求来源于微信</li>
-</ol>
-<h2 id="1-3-依据接口文档实现业务逻辑"><a href="#1-3-依据接口文档实现业务逻辑" class="headerlink" title="1.3 依据接口文档实现业务逻辑"></a>1.3 依据接口文档实现业务逻辑</h2><p>验证URL有效性成功后即接入生效，成为开发者。你可以在公众平台网站中申请微信认证，认证成功后，将获得更多接口权限，满足更多业务需求。</p>
-<p>成为开发者后，用户每次向公众号发送消息、或者产生自定义菜单、或产生微信支付订单等情况时，开发者填写的服务器配置URL将得到微信服务器推送过来的消息和事件，开发者可以依据自身业务逻辑进行响应，如回复消息。</p>
-<p>公众号调用各接口时，一般会获得正确的结果，具体结果可见对应接口的说明。返回错误时，可根据返回码来查询错误原因。<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1433747234" target="_blank" rel="noopener">全局返回码说明</a></p>
-<p>用户向公众号发送消息时，公众号方收到的消息发送者是一个OpenID，是使用用户微信号加密后的结果，每个用户对每个公众号有一个唯一的OpenID。</p>
-<h1 id="2-搭建服务器"><a href="#2-搭建服务器" class="headerlink" title="2 搭建服务器"></a>2 搭建服务器</h1><h2 id="2-1-使用Express框架搭建自己的服务器"><a href="#2-1-使用Express框架搭建自己的服务器" class="headerlink" title="2.1 使用Express框架搭建自己的服务器"></a>2.1 使用Express框架搭建自己的服务器</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 引入身份验证中间件</span></span><br><span class="line"><span class="keyword">const</span> auth = <span class="built_in">require</span>(<span class="string">'./wechat/auth'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 自己定义的微信服务器验证中间件</span></span><br><span class="line">app.use(auth())</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'server start at 3000...'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p><code>auth</code>模块是我们自己封装的身份验证中间件，处理的具体的业务就是验证服务器地址的有效性，以及用户发送数据的处理。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sha1 = <span class="built_in">require</span>(<span class="string">'sha1'</span>)</span><br><span class="line"><span class="keyword">const</span> config = <span class="built_in">require</span>(<span class="string">'../config'</span>)</span><br><span class="line"><span class="keyword">const</span> &#123; getUserDataAsync, parseXMLAsync &#125; = <span class="built_in">require</span>(<span class="string">'../utils/tools'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">async</span> (req, res) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">const</span> &#123; token &#125; = config;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">const</span> &#123;signature,echostr,timestamp,nonce&#125; = req.query;</span><br><span class="line">        <span class="comment">// sha1加密</span></span><br><span class="line">        <span class="keyword">var</span> sha1Str = sha1([timestamp, nonce, token].sort().join(<span class="string">''</span>));</span><br><span class="line"></span><br><span class="line">		<span class="comment">/**</span></span><br><span class="line"><span class="comment">         *   微信服务器会发送两种类型的消息给开发者服务器</span></span><br><span class="line"><span class="comment">         *      1.GET请求</span></span><br><span class="line"><span class="comment">         *        - 验证服务器的有效性</span></span><br><span class="line"><span class="comment">         *      2.POST请求</span></span><br><span class="line"><span class="comment">         *        - 微信服务器会将用户发送的数据以POST请求方式发送到开发者服务器</span></span><br><span class="line"><span class="comment">         *        - req.query:</span></span><br><span class="line"><span class="comment">         *          &#123;   signature: '54a0cdca7718d3bc6e096195376df20ebc9d9ae1',</span></span><br><span class="line"><span class="comment">         *              timestamp: '1559292171',</span></span><br><span class="line"><span class="comment">         *              nonce: '165500740',</span></span><br><span class="line"><span class="comment">         *              openid: 'opxFS5jO_7-qndWfuBC7FVZ1xcy0' &#125;</span></span><br><span class="line"><span class="comment">         *        - 请求体中的数据</span></span><br><span class="line"><span class="comment">         *          &lt;xml&gt;</span></span><br><span class="line"><span class="comment">         *              &lt;ToUserName&gt;&lt;![CDATA[gh_fd6e4ad4d6a9]]&gt;&lt;/ToUserName&gt;                        // 开发者的id</span></span><br><span class="line"><span class="comment">         *              &lt;FromUserName&gt;&lt;![CDATA[opxFS5jO_7-qndWfuBC7FVZ1xcy0]]&gt;&lt;/FromUserName&gt;       // 用户的openid</span></span><br><span class="line"><span class="comment">         *              &lt;CreateTime&gt;1559293611&lt;/CreateTime&gt;                                         // 发送消息的时间戳</span></span><br><span class="line"><span class="comment">         *              &lt;MsgType&gt;&lt;![CDATA[text]]&gt;&lt;/MsgType&gt;                                         // 消息类型</span></span><br><span class="line"><span class="comment">         *              &lt;Content&gt;&lt;![CDATA[12345]]&gt;&lt;/Content&gt;                                        // 消息内容</span></span><br><span class="line"><span class="comment">         *               &lt;MsgId&gt;22323717361290195&lt;/MsgId&gt;                                           // 消息id，微信服务器默认会保存3天用户发送的消息数据，3天后就会被销毁</span></span><br><span class="line"><span class="comment">         *          &lt;/xml&gt;</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         *      如果开发者服务器没有发送响应给微信服务器，微信服务器则会发送三次请求给开发者服务器</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         **/</span></span><br><span class="line">        <span class="keyword">if</span>(req.method == <span class="string">'GET'</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(sha1Str == signature)&#123;</span><br><span class="line">                res.send(echostr)</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                res.send(<span class="string">'error'</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(req.method == <span class="string">'POST'</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(sha1Str !== signature)&#123;</span><br><span class="line">                res.send(<span class="string">'error'</span>)</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">console</span>.log(req.query)</span><br><span class="line">            <span class="keyword">const</span> xmlData = <span class="keyword">await</span> getUserDataAsync(req);</span><br><span class="line">            <span class="built_in">console</span>.log(xmlData);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">const</span> jsData = <span class="keyword">await</span> parseXMLAsync(xmlData)</span><br><span class="line">            <span class="built_in">console</span>.log(jsData);</span><br><span class="line"></span><br><span class="line">            res.end(<span class="string">''</span>)</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            res.send(<span class="string">'error'</span>)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="3-获取access-token"><a href="#3-获取access-token" class="headerlink" title="3 获取access_token"></a>3 获取access_token</h1><h2 id="3-1-什么是access-token"><a href="#3-1-什么是access-token" class="headerlink" title="3.1 什么是access_token"></a>3.1 什么是access_token</h2><ul>
-<li><code>access_token</code>是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用<code>access_token</code>。</li>
-<li>特点：<ul>
-<li>唯一的</li>
-<li>有效期为2小时，最好提前5分钟请求新的<code>access_token</code></li>
-<li>公众号和小程序均可以使用<code>AppID</code>和<code>AppSecret</code>调用本接口来获取<code>access_token</code></li>
-<li>接口权限  每天2000次</li>
-</ul>
-</li>
-<li>请求方式：<ul>
-<li>GET</li>
-</ul>
-</li>
-<li>请求地址：<ul>
-<li><a href="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET" target="_blank" rel="noopener">https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=APPID&amp;secret=APPSECRET</a></li>
-</ul>
-</li>
-<li><strong>调用接口时，请登录“微信公众平台-开发-基本配置”提前将服务器IP地址添加到IP白名单中，点击查看设置方法，否则将无法调用成功。</strong>小程序无需配置IP白名单。</li>
-</ul>
-<h2 id="3-2-设计思路"><a href="#3-2-设计思路" class="headerlink" title="3.2 设计思路"></a>3.2 设计思路</h2><ol>
-<li>首次本地没有，发送请求获取access_token，保存下来（本地文件）（如果保存为全局变量可能会被更改，不安全）；</li>
-<li>第2次或以后：<ul>
-<li>先读取本地文件，判断access_token是否过期：<ul>
-<li>未过期则直接使用</li>
-<li>过期，重新请求获取access_token，保存覆盖之前的本地文件</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>整体思路：<ul>
-<li>读取本地文件:<ul>
-<li>本地有文件：<ul>
-<li>过期，重新请求获取access_token，保存覆盖之前的本地文件</li>
-<li>未过期，直接使用</li>
-</ul>
-</li>
-<li>本地没有文件<ul>
-<li>直接发送请求获取获取access_token，保存下来（本地文件）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="4-消息管理"><a href="#4-消息管理" class="headerlink" title="4 消息管理"></a>4 消息管理</h1><h2 id="4-1-普通消息"><a href="#4-1-普通消息" class="headerlink" title="4.1 普通消息"></a>4.1 普通消息</h2><p>普通消息种类：</p>
-<ol>
-<li>文本消息</li>
-<li>图片消息</li>
-<li>语音消息</li>
-<li>视频消息</li>
-<li>小视频消息</li>
-<li>地理位置消息</li>
-<li>链接消息</li>
-</ol>
-<h2 id="4-2-事件消息"><a href="#4-2-事件消息" class="headerlink" title="4.2 事件消息"></a>4.2 事件消息</h2><p>在微信用户和公众号产生交互的过程中，用户的某些操作会使得微信服务器通过<strong>事件推送</strong>的形式通知到开发者在开发者中心处设置的服务器地址，从而开发者可以获取到该信息。</p>
-<p>事件消息有以下几种：</p>
-<ul>
-<li>关注/取消关注事件</li>
-<li>扫描带参数二维码事件</li>
-<li>上报地理位置事件</li>
-<li>自定义菜单事件</li>
-<li>点击菜单拉取消息时的事件推送</li>
-<li>点击菜单跳转链接时的事件推送</li>
-</ul>
-<p>推送XML数据包示例（关注事件）：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xml</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ToUserName</span>&gt;</span>&lt;![CDATA[toUser]]&gt;<span class="tag">&lt;/<span class="name">ToUserName</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">FromUserName</span>&gt;</span>&lt;![CDATA[FromUser]]&gt;<span class="tag">&lt;/<span class="name">FromUserName</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">CreateTime</span>&gt;</span>123456789<span class="tag">&lt;/<span class="name">CreateTime</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">MsgType</span>&gt;</span>&lt;![CDATA[event]]&gt;<span class="tag">&lt;/<span class="name">MsgType</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Event</span>&gt;</span>&lt;![CDATA[subscribe]]&gt;<span class="tag">&lt;/<span class="name">Event</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xml</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>各事件推送消息参数如下：</p>
-<table>
-<thead>
-<tr>
-<th>事件消息</th>
-<th>MsgType</th>
-<th>Event</th>
-<th>EventKey</th>
-<th>其他参数</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>关注</td>
-<td>event</td>
-<td>subscribe</td>
-<td>\</td>
-<td>\</td>
-</tr>
-<tr>
-<td>取消关注</td>
-<td>event</td>
-<td>unsubscribe</td>
-<td>\</td>
-<td>\</td>
-</tr>
-<tr>
-<td>扫描带参数二维码(用户未关注时)</td>
-<td>event</td>
-<td>subscribe</td>
-<td>qrscene_123123，qrscene_为前缀，后面为二维码的参数值</td>
-<td></td>
-</tr>
-<tr>
-<td>扫描带参数二维码(用户已关注时)</td>
-<td>event</td>
-<td>SCAN</td>
-<td>SCENE_VALUE，是一个32位无符号整数，即创建二维码时的二维码scene_id</td>
-<td></td>
-</tr>
-<tr>
-<td>上报地理位置事件</td>
-<td>event</td>
-<td>LOCATION</td>
-<td>\</td>
-<td>Latitude、Longitude、Precision</td>
-</tr>
-<tr>
-<td>点击菜单拉取消息时的事件推送</td>
-<td>event</td>
-<td>CLICK</td>
-<td>事件KEY值，与自定义菜单接口中KEY值对应</td>
-<td></td>
-</tr>
-<tr>
-<td>点击菜单跳转链接时的事件推送</td>
-<td>event</td>
-<td>VIEW</td>
-<td>事件KEY值，设置的跳转URL</td>
-<td></td>
-</tr>
-</tbody></table>
-<h1 id="5-使用ejs模板引擎"><a href="#5-使用ejs模板引擎" class="headerlink" title="5  使用ejs模板引擎"></a>5  使用ejs模板引擎</h1><h2 id="5-1-为什么使用ejs"><a href="#5-1-为什么使用ejs" class="headerlink" title="5.1 为什么使用ejs"></a>5.1 为什么使用ejs</h2><ul>
-<li>在web项目中渲染页面，我们很多时候，会用json或者拼接字符串的方式，不够美观，破坏原有html结构，大量的html拼接会使代码难以阅读。</li>
-<li>ejs是一个简单高效的模板语言，通过数据和模板，可以生成HTML标记文本。</li>
-</ul>
-<h2 id="5-2-ejs介绍"><a href="#5-2-ejs介绍" class="headerlink" title="5.2 ejs介绍"></a>5.2 ejs介绍</h2><ul>
-<li>官网：<a href="https://ejs.bootcss.com/" target="_blank" rel="noopener">https://ejs.bootcss.com/</a></li>
-</ul>
-<h2 id="5-3-ejs在express中使用方法"><a href="#5-3-ejs在express中使用方法" class="headerlink" title="5.3 ejs在express中使用方法"></a>5.3 ejs在express中使用方法</h2><ol>
-<li><p>为express服务器，设置模板引擎类型</p>
-<ul>
-<li><pre><code class="jade">app.set(&quot;view engine&quot;,&quot;jade/ejs/handlebars/任选其一&quot;)
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. 配置ejs模板文件存放路径</span><br><span class="line"></span><br><span class="line">   - ```javascript</span><br><span class="line">     app.set(&quot;View&quot;,path)</span><br></pre></td></tr></table></figure></code></pre>
-</li>
-</ul>
-</li>
-<li><p>将ejs模板渲染成html页面后返回给浏览器</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.render(path,data)</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<h1 id="6-node-js常用工具"><a href="#6-node-js常用工具" class="headerlink" title="6 node.js常用工具"></a>6 node.js常用工具</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1. create-react-app：快速搭建 React 应用的原型</span><br><span class="line">安装方法：npm install -g create-react-app，create-react-app 由 Facebook 出品，能够帮你快速的生成 React 应用的骨架，里面包括典型 React 应用的基础依赖，最佳实践，包括：开发环境的各种工具，能直接修改运行的测试文件、工具，帮你构建源代码以便发布到生产环境的脚本。</span><br><span class="line">2. standard：傻瓜式的 Javascript 语法检查工具</span><br><span class="line">安装方法：npm install -g standard，standard 是代码检查工具领域的新秀，代码检查存在的必要性这里不再赘述。在代码风格检查领域有几款优秀的工具，按出现的先后顺序为：jslint、jshint、eslint，而跟 standard 同时出现的还要很多其他的，他的特点是傻瓜式，零配置即可上手，目前在已经有不少开源项目使用了这种风格，无需任何配置，只需要用过命令行就可以确保所有的代码贡献者提交的代码是风格一致的。</span><br><span class="line">3. nodemon：自动重启 NodeJS 应用</span><br><span class="line">安装方法，npm install -g nodemon，nodemon 是一款监听服务运行时所在的目录源代码变化并自动重启服务的工具，是项目快速迭代时的完美伴侣，因为 nodemon 能帮你把重复工作降到最低。理论上 nodemon 支持各种语言的服务重启，并且支持监听目录和文件的自定义配置。</span><br><span class="line">4. pm2：便捷管理 node 服务进程</span><br><span class="line">安装方法，npm install -g pm2，pm2 是一款非常强大的服务进程管理工具，尤其适合用在生产环境，人人车所有的线上 node 服务都是用他来管理，开箱即用的特性包括：进程监控、负载均衡、内存监控、日志管理、服务管理。并且有需要的同学可以开启他官方的 node 应用监控后台支持：keymetrics.io</span><br><span class="line">5. localtunnel：把本机服务暴露到外网</span><br><span class="line">安装方法：npm install -g localtunnel，localtunnel能够让你快速的把本机的服务暴露到公网上，提供给其他人使用、测试，不需要任何域名、虚拟主机。典型的使用场景比如做前端开发的同学可以利用这个工具把开发环境的服务提供给 PM 或者 QA 验收使用。提供类似服务的还有 ngrok 及其国内克隆版 natapp，但是都是收费的。</span><br><span class="line">6. david：帮你找到已经过期的依赖包</span><br><span class="line">安装方法：npm install -g david，david 不仅仅能够让你知道你的项目中哪些依赖包需要升级，还提供了快速升级包的机制。npm 内置的工具有 npm outdated，但是 david 较之更优。</span><br><span class="line">7. nvm：Node 版本管理器</span><br><span class="line">安装方法参见 nvm，该工具不是 NodeJS 编写。顾名思义，他能够帮你安装、管理、切换不同版本的 NodeJS 引擎，对于开源项目维护者来说尤其实用。比如：你的项目需要支持 NodeJS 的 Current Release（7.X），也要支持 LTS Release（6.X），在跑测试的时候，辅以简单的脚本就可以在多个不同版本上做自动化回归。</span><br><span class="line">8. yarn：比 npm 更好的包管理器</span><br><span class="line">安装方法：npm install -g yarn，yarn 是 Facebook 出品的改良版 NodeJS 包管理器，在性能上有非常大的改进，依赖管理方面也修复了 npm 被人诟病了很久的无法锁定依赖的问题，但是国内的同学使用可能偶尔会遇到服务不稳定的情况。</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/22/WORLD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jedision Shi">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="代代码头">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/22/WORLD/" class="post-title-link" itemprop="url">WORLD</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-11-22 15:21:21" itemprop="dateCreated datePublished" datetime="2019-11-22T15:21:21+08:00">2019-11-22</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/22/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jedision Shi">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="代代码头">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/22/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-11-22 13:23:01" itemprop="dateCreated datePublished" datetime="2019-11-22T13:23:01+08:00">2019-11-22</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -1199,6 +822,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Node-js是什么"><span class="nav-number">1.</span> <span class="nav-text">1.1 Node.js是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Node-js能做什么"><span class="nav-number">2.</span> <span class="nav-text">1.2 Node.js能做什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-一些资源"><span class="nav-number">3.</span> <span class="nav-text">1.3 一些资源</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-起步"><span class="nav-number"></span> <span class="nav-text">2 起步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-安装Node环境"><span class="nav-number">1.</span> <span class="nav-text">2.1 安装Node环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-使用"><span class="nav-number">2.</span> <span class="nav-text">2.2 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-解析执行JavaScript"><span class="nav-number">2.1.</span> <span class="nav-text">2.2.1 解析执行JavaScript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-读写文件"><span class="nav-number">2.2.</span> <span class="nav-text">2.2.2 读写文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-http"><span class="nav-number">2.3.</span> <span class="nav-text">2.2.3 http</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Node中的JavaScript"><span class="nav-number"></span> <span class="nav-text">3 Node中的JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-模块系统"><span class="nav-number">1.</span> <span class="nav-text">3.1 模块系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-核心模块"><span class="nav-number">2.</span> <span class="nav-text">3.2 核心模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-第三方模块"><span class="nav-number">3.</span> <span class="nav-text">3.3 第三方模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-自定义模块"><span class="nav-number">4.</span> <span class="nav-text">3.4 自定义模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-CommonJS模块规范"><span class="nav-number">5.</span> <span class="nav-text">3.5 CommonJS模块规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-require加载规则"><span class="nav-number">6.</span> <span class="nav-text">3.6 require加载规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-npm"><span class="nav-number">7.</span> <span class="nav-text">3.7 npm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-8-package-json和package-lock-json"><span class="nav-number">8.</span> <span class="nav-text">3.8 package.json和package-lock.json</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Web服务器开发"><span class="nav-number"></span> <span class="nav-text">4 Web服务器开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-IP地址和端口号"><span class="nav-number">1.</span> <span class="nav-text">4.1 IP地址和端口号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Content-Type"><span class="nav-number">2.</span> <span class="nav-text">4.2 Content-Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-请求对象Request"><span class="nav-number">3.</span> <span class="nav-text">4.3 请求对象Request</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-请求对象Request"><span class="nav-number">4.</span> <span class="nav-text">4.4 请求对象Request</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-服务端渲染和客户端渲染"><span class="nav-number">5.</span> <span class="nav-text">4.5 服务端渲染和客户端渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-在Node中使用模板引擎"><span class="nav-number">6.</span> <span class="nav-text">4.6 在Node中使用模板引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-7-如何通过服务端让客户端重定向"><span class="nav-number">7.</span> <span class="nav-text">4.7 如何通过服务端让客户端重定向</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Express"><span class="nav-number"></span> <span class="nav-text">5 Express</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-安装"><span class="nav-number">1.</span> <span class="nav-text">5.1 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-Hello-Word"><span class="nav-number">2.</span> <span class="nav-text">5.2 Hello Word</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-利用-Express-托管静态文件"><span class="nav-number">3.</span> <span class="nav-text">5.3 利用 Express 托管静态文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-在Express中获取表单POST请求体数据"><span class="nav-number">4.</span> <span class="nav-text">5.4 在Express中获取表单POST请求体数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-在Express中获取GET请求query查询数据"><span class="nav-number">5.</span> <span class="nav-text">5.5 在Express中获取GET请求query查询数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-使用Express搭建CRUD学生信息管理系统"><span class="nav-number"></span> <span class="nav-text">6 使用Express搭建CRUD学生信息管理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-初始化"><span class="nav-number">1.</span> <span class="nav-text">6.1 初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-模板处理"><span class="nav-number">2.</span> <span class="nav-text">6.2 模板处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-路由设计"><span class="nav-number">3.</span> <span class="nav-text">6.3 路由设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-路由模块提取"><span class="nav-number">4.</span> <span class="nav-text">6.2  路由模块提取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-students数据操作模块"><span class="nav-number">5.</span> <span class="nav-text">6.3 students数据操作模块</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-MongoDB"><span class="nav-number"></span> <span class="nav-text">7 MongoDB</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-MongoDB-下载"><span class="nav-number">1.</span> <span class="nav-text">7.1 MongoDB 下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-MongoDB-安装"><span class="nav-number">2.</span> <span class="nav-text">7.2 MongoDB 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-启动和关闭数据库"><span class="nav-number">3.</span> <span class="nav-text">7.3 启动和关闭数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-4-连接和退出MongoDB"><span class="nav-number">4.</span> <span class="nav-text">7.4 连接和退出MongoDB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-5-基本命令"><span class="nav-number">5.</span> <span class="nav-text">7.5 基本命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-6-在Node中操作MongoDB数据库"><span class="nav-number">6.</span> <span class="nav-text">7.6 在Node中操作MongoDB数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-6-1-使用官方的mongodb包"><span class="nav-number">6.1.</span> <span class="nav-text">7.6.1 使用官方的mongodb包</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-总结"><span class="nav-number"></span> <span class="nav-text">8 总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-ES6-数组find-、findIndex-原理"><span class="nav-number">1.</span> <span class="nav-text">8.1 ES6 数组find()、findIndex()原理</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
