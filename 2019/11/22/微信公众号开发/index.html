@@ -46,28 +46,31 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="代代码头">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="微信公众号开发1 接入指南接入微信公众平台开发，开发者需要按照如下步骤完成： 1、填写服务器配置 2、验证服务器地址的有效性 3、依据接口文档实现业务逻辑 1.1 填写服务器配置登录微信公众平台官网后，在公众平台官网的开发-基本设置页面，点击“修改配置”按钮，开始配置：  填写服务器地址（URL）、Token和EncodingAESKey， 其中URL是开发者用来接收微信消息和事件的接口URL；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信公众号开发">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;22&#x2F;%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91&#x2F;index.html">
 <meta property="og:site_name" content="代代码头">
+<meta property="og:description" content="微信公众号开发1 接入指南接入微信公众平台开发，开发者需要按照如下步骤完成： 1、填写服务器配置 2、验证服务器地址的有效性 3、依据接口文档实现业务逻辑 1.1 填写服务器配置登录微信公众平台官网后，在公众平台官网的开发-基本设置页面，点击“修改配置”按钮，开始配置：  填写服务器地址（URL）、Token和EncodingAESKey， 其中URL是开发者用来接收微信消息和事件的接口URL；">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-22T07:24:56.137Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2019/11/22/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>代代码头</title>
+  <title>微信公众号开发 | 代代码头</title>
   
 
 
@@ -162,10 +165,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/22/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -179,8 +182,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/22/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">微信公众号开发</a>
+          微信公众号开发
         </h1>
 
         <div class="post-meta">
@@ -205,7 +207,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="微信公众号开发"><a href="#微信公众号开发" class="headerlink" title="微信公众号开发"></a>微信公众号开发</h1><h1 id="1-接入指南"><a href="#1-接入指南" class="headerlink" title="1 接入指南"></a>1 接入指南</h1><p>接入微信公众平台开发，开发者需要按照如下步骤完成：</p>
+        <h1 id="微信公众号开发"><a href="#微信公众号开发" class="headerlink" title="微信公众号开发"></a>微信公众号开发</h1><h1 id="1-接入指南"><a href="#1-接入指南" class="headerlink" title="1 接入指南"></a>1 接入指南</h1><p>接入微信公众平台开发，开发者需要按照如下步骤完成：</p>
 <p>1、填写服务器配置</p>
 <p>2、验证服务器地址的有效性</p>
 <p>3、依据接口文档实现业务逻辑</p>
@@ -415,151 +417,36 @@
 </ol>
 <h1 id="6-node-js常用工具"><a href="#6-node-js常用工具" class="headerlink" title="6 node.js常用工具"></a>6 node.js常用工具</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1. create-react-app：快速搭建 React 应用的原型</span><br><span class="line">安装方法：npm install -g create-react-app，create-react-app 由 Facebook 出品，能够帮你快速的生成 React 应用的骨架，里面包括典型 React 应用的基础依赖，最佳实践，包括：开发环境的各种工具，能直接修改运行的测试文件、工具，帮你构建源代码以便发布到生产环境的脚本。</span><br><span class="line">2. standard：傻瓜式的 Javascript 语法检查工具</span><br><span class="line">安装方法：npm install -g standard，standard 是代码检查工具领域的新秀，代码检查存在的必要性这里不再赘述。在代码风格检查领域有几款优秀的工具，按出现的先后顺序为：jslint、jshint、eslint，而跟 standard 同时出现的还要很多其他的，他的特点是傻瓜式，零配置即可上手，目前在已经有不少开源项目使用了这种风格，无需任何配置，只需要用过命令行就可以确保所有的代码贡献者提交的代码是风格一致的。</span><br><span class="line">3. nodemon：自动重启 NodeJS 应用</span><br><span class="line">安装方法，npm install -g nodemon，nodemon 是一款监听服务运行时所在的目录源代码变化并自动重启服务的工具，是项目快速迭代时的完美伴侣，因为 nodemon 能帮你把重复工作降到最低。理论上 nodemon 支持各种语言的服务重启，并且支持监听目录和文件的自定义配置。</span><br><span class="line">4. pm2：便捷管理 node 服务进程</span><br><span class="line">安装方法，npm install -g pm2，pm2 是一款非常强大的服务进程管理工具，尤其适合用在生产环境，人人车所有的线上 node 服务都是用他来管理，开箱即用的特性包括：进程监控、负载均衡、内存监控、日志管理、服务管理。并且有需要的同学可以开启他官方的 node 应用监控后台支持：keymetrics.io</span><br><span class="line">5. localtunnel：把本机服务暴露到外网</span><br><span class="line">安装方法：npm install -g localtunnel，localtunnel能够让你快速的把本机的服务暴露到公网上，提供给其他人使用、测试，不需要任何域名、虚拟主机。典型的使用场景比如做前端开发的同学可以利用这个工具把开发环境的服务提供给 PM 或者 QA 验收使用。提供类似服务的还有 ngrok 及其国内克隆版 natapp，但是都是收费的。</span><br><span class="line">6. david：帮你找到已经过期的依赖包</span><br><span class="line">安装方法：npm install -g david，david 不仅仅能够让你知道你的项目中哪些依赖包需要升级，还提供了快速升级包的机制。npm 内置的工具有 npm outdated，但是 david 较之更优。</span><br><span class="line">7. nvm：Node 版本管理器</span><br><span class="line">安装方法参见 nvm，该工具不是 NodeJS 编写。顾名思义，他能够帮你安装、管理、切换不同版本的 NodeJS 引擎，对于开源项目维护者来说尤其实用。比如：你的项目需要支持 NodeJS 的 Current Release（7.X），也要支持 LTS Release（6.X），在跑测试的时候，辅以简单的脚本就可以在多个不同版本上做自动化回归。</span><br><span class="line">8. yarn：比 npm 更好的包管理器</span><br><span class="line">安装方法：npm install -g yarn，yarn 是 Facebook 出品的改良版 NodeJS 包管理器，在性能上有非常大的改进，依赖管理方面也修复了 npm 被人诟病了很久的无法锁定依赖的问题，但是国内的同学使用可能偶尔会遇到服务不稳定的情况。</span><br></pre></td></tr></table></figure>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/22/WORLD/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jedision Shi">
-      <meta itemprop="description" content="">
-    </span>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/22/WORLD/" rel="next" title="WORLD">
+                  <i class="fa fa-chevron-left"></i> WORLD
+                </a>
+            </div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="代代码头">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/22/WORLD/" class="post-title-link" itemprop="url">WORLD</a>
-        </h1>
+            <span class="post-nav-divider"></span>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-11-22 15:21:21" itemprop="dateCreated datePublished" datetime="2019-11-22T15:21:21+08:00">2019-11-22</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/22/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jedision Shi">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="代代码头">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/22/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-11-22 13:23:01" itemprop="dateCreated datePublished" datetime="2019-11-22T13:23:01+08:00">2019-11-22</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -588,6 +475,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#微信公众号开发"><span class="nav-number">1.</span> <span class="nav-text">微信公众号开发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-接入指南"><span class="nav-number">2.</span> <span class="nav-text">1 接入指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-填写服务器配置"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 填写服务器配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-验证服务器地址的有效性"><span class="nav-number">2.2.</span> <span class="nav-text">1.2 验证服务器地址的有效性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-依据接口文档实现业务逻辑"><span class="nav-number">2.3.</span> <span class="nav-text">1.3 依据接口文档实现业务逻辑</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-搭建服务器"><span class="nav-number">3.</span> <span class="nav-text">2 搭建服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-使用Express框架搭建自己的服务器"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 使用Express框架搭建自己的服务器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-获取access-token"><span class="nav-number">4.</span> <span class="nav-text">3 获取access_token</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-什么是access-token"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 什么是access_token</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-设计思路"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 设计思路</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-消息管理"><span class="nav-number">5.</span> <span class="nav-text">4 消息管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-普通消息"><span class="nav-number">5.1.</span> <span class="nav-text">4.1 普通消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-事件消息"><span class="nav-number">5.2.</span> <span class="nav-text">4.2 事件消息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-使用ejs模板引擎"><span class="nav-number">6.</span> <span class="nav-text">5  使用ejs模板引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-为什么使用ejs"><span class="nav-number">6.1.</span> <span class="nav-text">5.1 为什么使用ejs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-ejs介绍"><span class="nav-number">6.2.</span> <span class="nav-text">5.2 ejs介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-ejs在express中使用方法"><span class="nav-number">6.3.</span> <span class="nav-text">5.3 ejs在express中使用方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-node-js常用工具"><span class="nav-number">7.</span> <span class="nav-text">6 node.js常用工具</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
